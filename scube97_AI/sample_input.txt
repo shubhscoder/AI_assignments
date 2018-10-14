@@ -1,0 +1,28 @@
+
+Input descriptor: An integer n corresponding to the size of game
+                  A n x n matrix corresponding to the intial game state.
+                  A n x n matrix corresponding to the final game state.
+1 3 4
+8 0 5
+7 2 6
+
+1 2 3
+8 0 4
+7 6 5
+
+1 3 4
+8 6 2
+0 7 5
+
+1 2 3
+8 0 4
+7 6 5
+
+3 6 4
+0 1 2
+8 7 5
+
+1 2 3
+8 0 4
+7 6 5
+
