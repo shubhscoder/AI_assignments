@@ -18,6 +18,7 @@ class game:
 		self.st = q.PriorityQueue()
 		self.num_pos = {}
 		self.trace_game = {}
+		self.flag = 0
 		print("Enter the size of the board")
 		self.n=int(input())
 		print("Enter initial state of the board")
@@ -103,6 +104,7 @@ class game:
 			self.visited.add(game.tuple_for_list(board))
 			if board==self.final_state:
 				print("Moves required : "+str(current_node[0][1]))
+				self.flag = 1
 				return
 			moves = self.move_generator(board)
 			pos_zero = game.zero_pos(board)
@@ -116,11 +118,13 @@ class game:
 					self.trace_game[game.tuple_for_list(duplicate)] = game.tuple_for_list(board)
 					self.st.put(((ht+1+self.heuristic(duplicate),ht+1),game.tuple_for_list(duplicate)))
 			iterations+=1
-			if iterations>10**6:
-				print("Probably not solvalbe")
+			if iterations>100000:
 				return 
 
 	def print_move_sequence(self):
+		if self.flag!=1:
+			print("Not solvable")
+			return
 		move_sequence = []
 		cur = game.tuple_for_list(self.final_state)
 		while cur!=self.trace_game[cur]:
