@@ -92,3 +92,28 @@ if banao.colors_used(banao.color)<=banao.m:
 else:
 	print("Solution not possible with the given M")
 	print("Atleast "+str(banao.colors_used(banao.color))+" colors are required to color the give graph")
+'''
+Sample Input1:
+n:4
+edges:6
+max colors:3
+graph:
+1 2
+1 3
+1 4
+2 3
+2 4
+3 4
+
+Sample Input2:
+n:4
+edges:6
+max colors:4
+graph:
+1 2
+1 3
+1 4
+2 3
+2 4
+3 4
+'''
